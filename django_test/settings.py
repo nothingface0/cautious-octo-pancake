@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rd1$38k)q(1m)n@ez)jkub1%7u0e@=hzufi@z-p#(s^$b(7$3='
+SECRET_KEY = config('DJANGO_SECRET_KEY')
+DJANGO_SECRET_ACC = config('DJANGO_SECRET_ACC', default='admin')
+DJANGO_SECRET_PASS = config('DJANGO_SECRET_PASS', default='admin')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -67,12 +70,15 @@ WSGI_APPLICATION = 'django_test.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': config('DJANGO_DATABASE_ENGINE', default=''),
+        'NAME': config('DJANGO_DATABASE_NAME', default=''),
+        'USER': config('DJANGO_DATABASE_USER', default=''),
+        'PASSWORD': config('DJANGO_DATABASE_PASSWORD', default=''),
+        'HOST': config('DJANGO_DATABASE_HOST', default=''),
+        'PORT': config('DJANGO_DATABASE_PORT', default=''),
+    },
 }
 
 # Password validation
