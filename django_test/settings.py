@@ -27,7 +27,10 @@ DJANGO_SECRET_PASS = config('DJANGO_SECRET_PASS', default='admin')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', default=False)
 
-ALLOWED_HOSTS = ['django-psql-example-birdup.app.cern.ch']
+ALLOWED_HOSTS = [
+    config('DJANGO_ALLOWED_HOSTS', default='localhost'),
+    '127.0.0.1',
+]
 
 # Application definition
 
