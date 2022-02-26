@@ -25,9 +25,9 @@ DJANGO_SECRET_ACC = config('DJANGO_SECRET_ACC', default='admin')
 DJANGO_SECRET_PASS = config('DJANGO_SECRET_PASS', default='admin')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DJANGO_DEBUG', default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-psql-example-birdup.app.cern.ch']
 
 # Application definition
 
