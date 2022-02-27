@@ -75,12 +75,18 @@ WSGI_APPLICATION = 'django_test.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': config('DJANGO_DATABASE_ENGINE', default=''),
-        'NAME': config('DJANGO_DATABASE_NAME', default=''),
-        'USER': config('DJANGO_DATABASE_USER', default=''),
-        'PASSWORD': config('DJANGO_DATABASE_PASSWORD', default=''),
-        'HOST': config('DJANGO_DATABASE_HOST', default=''),
-        'PORT': config('DJANGO_DATABASE_PORT', default=''),
+        'ENGINE':
+        config('DJANGO_DATABASE_ENGINE', default='django.db.backends.sqlite3'),
+        'NAME':
+        config('DJANGO_DATABASE_NAME', default='db.sqlite3'),
+        'USER':
+        config('DJANGO_DATABASE_USER', default=''),
+        'PASSWORD':
+        config('DJANGO_DATABASE_PASSWORD', default=''),
+        'HOST':
+        config('DJANGO_DATABASE_HOST', default=''),
+        'PORT':
+        config('DJANGO_DATABASE_PORT', default=''),
     },
 }
 
