@@ -8,7 +8,7 @@ import logging
 # Create your views here.
 def birdup_home(request):
 
-    logging.info("!!!!")
+    logging.info("SQWAK")
     # Test reading listing files from EOS
     rootpath = join(sep, 'eos', 'user', 'b', 'birdup', 'test')
     logging.info(listdir(rootpath))
