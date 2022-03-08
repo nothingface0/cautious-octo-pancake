@@ -1,13 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load render_table from django_tables2 %}
-<!doctype html>
-<html>
-    <head>
-        <title>THESE ARE PEOPLE</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    </head>
-    <body>
-		<img src="{% static 'tables_tutorial/thesearepeople.jpg' %}" alt="" width="200">		
-        {% render_table table %}
-    </body>
-</html>
+{% block head %}
+<title>THESE ARE PEOPLE</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+{% endblock %}
+{% block body %}
+<img src="{% static 'tables_tutorial/thesearepeople.jpg' %}" alt="" width="200">		
+{% render_table table %}
+{% endblock %} 
+
