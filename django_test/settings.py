@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles', 'django_test',
-    'lidar_components', 'django_birdup'
+    'lidar_components', 'django_birdup', 'django_tables2', 'tables_tutorial'
 ]
 
 MIDDLEWARE = [

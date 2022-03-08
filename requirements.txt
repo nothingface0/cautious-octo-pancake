@@ -35,3 +35,4 @@ txaio==22.2.1
 typing-extensions==4.1.1
 wrapt==1.13.3
 zope.interface==5.4.0
+django-tables2
