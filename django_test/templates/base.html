@@ -3,7 +3,7 @@
 	<body>
 		<ul>
 			{% for url in urls %}
-			<li><a href="/{{url.pattern}}">{{ url.pattern }}</a></li>
+			<li>{{url}}</li>
 			{% endfor %}
 		</ul>
 		{% block body %}

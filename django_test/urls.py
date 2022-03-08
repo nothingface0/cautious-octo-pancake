@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from tables_tutorial.views import PersonListView
+from .views import home
 
 urlpatterns = [
-    path("", include("django_birdup.urls")),
+    path("", home),
+    path("birdup/", include("django_birdup.urls")),
     path("admin/", admin.site.urls),
     path("lidar_components/", include("lidar_components.urls")),
     path("people/", PersonListView.as_view()),
