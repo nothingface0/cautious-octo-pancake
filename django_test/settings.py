@@ -78,7 +78,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "django_test.wsgi.application"
+# WSGI_APPLICATION = "django_test.wsgi.application"
+ASGI_APPLICATION = "django_test.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -153,3 +154,4 @@ LOGGING = {
         },
     },
 }
+CSRF_TRUSTED_ORIGINS = [config("CSRF_TRUSTED_ORIGINS", default="")]
