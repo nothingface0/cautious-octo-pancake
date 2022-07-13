@@ -14,7 +14,7 @@
      const roomName = JSON.parse(document.getElementById('room-name').textContent);
 	 if (location.protocol === 'https:') {
 		 // page is secure
-		 const chatSocket = new WebSocket(
+		 var chatSocket = new WebSocket(
 			 'wss://'
 			 + window.location.host
 			 + '/ws/chat/'
@@ -22,7 +22,7 @@
 			 + '/'
 		 );
 	 }else{
-		 const chatSocket = new WebSocket(
+		 var chatSocket = new WebSocket(
 			 'ws://'
 			 + window.location.host
 			 + '/ws/chat/'
@@ -48,7 +48,7 @@
      };
 
      document.querySelector('#chat-message-submit').onclick = function(e) {
-         const messageInputDom = document.querySelectobr('#chat-message-input');
+         const messageInputDom = document.querySelector('#chat-message-input');
          const message = messageInputDom.value;
          chatSocket.send(JSON.stringify({
              'message': message
