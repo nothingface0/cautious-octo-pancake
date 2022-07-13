@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django_tables2",
     "tables_tutorial",
     "channels",
+    "chat",
 ]
 
 MIDDLEWARE = [
@@ -155,3 +156,16 @@ LOGGING = {
     },
 }
 CSRF_TRUSTED_ORIGINS = [config("CSRF_TRUSTED_ORIGINS", default="")]
+
+# Redis Server Hostname
+REDIS_HOST = config("REDIS_HOST", default="localhost")
+REDIS_PASSWORD = config("REDIS_PASSWORD", default="")
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("redis://:" + REDIS_PASSWORD + "@" + REDIS_HOST + ":6379/0")],
+        },
+    },
+}
