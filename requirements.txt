@@ -37,3 +37,4 @@ wrapt
 zope.interface
 django-tables2
 channels
+psycopg2-binary
