@@ -24,4 +24,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("lidar_components/", include("lidar_components.urls")),
     path("people/", PersonListView.as_view()),
+    path("chat/", include("chat.urls")),
 ]
