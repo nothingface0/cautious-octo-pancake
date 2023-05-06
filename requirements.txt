@@ -3,12 +3,12 @@ astroid
 attrs
 autobahn
 Automat
-backports.zoneinfo
+#backports.zoneinfo
 cffi
 constantly
 cryptography
 daphne
-Django
+Django<4.0.0
 flake8
 hyperlink
 idna
@@ -36,6 +36,6 @@ typing-extensions
 wrapt
 zope.interface
 django-tables2
-channels
+channels[daphne]
 psycopg2-binary
-channels_redis
+channels-redis
