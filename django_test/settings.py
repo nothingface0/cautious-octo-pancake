@@ -25,8 +25,8 @@ DJANGO_SECRET_ACC = config("DJANGO_SECRET_ACC", default="admin")
 DJANGO_SECRET_PASS = config("DJANGO_SECRET_PASS", default="admin")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DJANGO_DEBUG", default=False)
-
+# DEBUG = config("DJANGO_DEBUG", default=False)
+DEBUG = True
 ALLOWED_HOSTS = [
     config("DJANGO_ALLOWED_HOSTS", default="localhost"),
     "127.0.0.1",
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "tables_tutorial",
     "channels",
     "chat",
+    "eos_files",
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "django_test.context_processors.global_context",
+                "django.template.context_processors.media",
             ],
         },
     },
@@ -171,3 +173,7 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+
+MEDIA_ROOT = config("MEDIA_ROOT")
+MEDIA_URL = "/media/"

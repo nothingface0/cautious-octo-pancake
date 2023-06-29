@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<link rel="icon" href="{% static 'django_birdup/favicon.gif' %}" type="image/gif" />
+<h1>FILEZ in {{ MEDIA_ROOT }} !!!!!</h1>
+<ul>
+    {% for file in FILES %}
+    <li>
+        <a href="{{MEDIA_URL}}{{file}}">{{file}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

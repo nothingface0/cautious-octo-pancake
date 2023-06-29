@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.birdup_home, name="birdup_home"),
+    path("", views.file_list, name="file_list"),
 ]
